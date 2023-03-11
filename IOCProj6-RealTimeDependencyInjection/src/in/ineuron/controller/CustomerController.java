@@ -18,7 +18,15 @@ public class CustomerController {
 
 	public String processResult(CustomerVo vo) {
 		CustomerDTO dto = new CustomerDTO();
-		service.calculateSimpleInterest(dto);
-		return "";
+
+		dto.setCustomerName(vo.getCustomerName());
+		dto.setCustomerAddress(vo.getCustomerAddress());
+		dto.setPamt(Float.parseFloat(vo.getPamt()));
+		dto.setRate(Float.parseFloat(vo.getRate()));
+		dto.setTime(Float.parseFloat(vo.getTime()));
+
+		String result = service.calculateSimpleInterest(dto);
+
+		return result;
 	}
 }

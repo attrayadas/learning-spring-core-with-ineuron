@@ -48,8 +48,8 @@ public class ClientApp {
 }
 
 //Output:
-//	Enter the CustomerName :: sachin
-//	Enter the CustomerAddr :: MI
+//	Enter the CustomerName :: Attraya
+//	Enter the CustomerAddr :: Kolkata
 //	Enter the Principal Amount :: 25000
 //	Enter the Time period :: 5
 //	Enter the Rate of Interest :: 8
@@ -59,4 +59,4 @@ public class ClientApp {
 //	CustomerMgmtServiceImpl:: One param constructor..
 //	Controller.class file is loading...
 //	MainController:: one param constructor...
-//	connection established succesfully....
+//	Customer Registration Successful :: 25000.0 Interest :: 10000.0

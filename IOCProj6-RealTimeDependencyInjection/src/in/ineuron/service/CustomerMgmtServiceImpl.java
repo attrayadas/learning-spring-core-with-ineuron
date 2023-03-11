@@ -19,8 +19,26 @@ public class CustomerMgmtServiceImpl implements ICustomerMgmtService {
 
 	@Override
 	public String calculateSimpleInterest(CustomerDTO dto) {
-		dao.insert(new CustomerBO());
-		return null;
+		float intrAmt = 0.0f;
+
+		intrAmt = (dto.getPamt() * dto.getTime() * dto.getRate()) / 100.0f;
+
+		CustomerBO bo = new CustomerBO();
+
+		bo.setCustomerAddress(dto.getCustomerAddress());
+		bo.setCustomerName(dto.getCustomerName());
+		bo.setPamt(dto.getPamt());
+		bo.setRate(dto.getRate());
+		bo.setTime(dto.getTime());
+		bo.setInterestAmt(intrAmt);
+
+		int count = dao.insert(bo);
+
+		// process the result
+		if (count == 0)
+			return "Customer Registration failed :: " + dto.getPamt() + " Interest :: " + intrAmt;
+		else
+			return "Customer Registration Successful :: " + dto.getPamt() + " Interest :: " + intrAmt;
 	}
 
 }
