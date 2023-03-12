@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id='baseYear' class='in.ineuron.bean.EngCourses'
+		abstract="true">
+		<property name="subjects">
+			<set>
+				<value>M1</value>
+				<value>C</value>
+				<value>CAD</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean class='in.ineuron.bean.EngCourses' parent="baseYear">
+		<property name="subjects">
+			<set>
+				<value>DMS</value>
+				<value>DS</value>
+				<value>M3</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean class='in.ineuron.bean.EngCourses' parent="baseYear">
+		<property name="subjects">
+			<set>
+				<value>GTC</value>
+				<value>ADA</value>
+				<value>M4</value>
+			</set>
+		</property>
+	</bean>
+
+
+	<bean class='in.ineuron.bean.EngCourses' parent="baseYear">
+		<property name="subjects">
+			<set>
+				<value>OS</value>
+				<value>FLAT</value>
+				<value>CompilerDesign</value>
+			</set>
+		</property>
+	</bean>
+
+</beans>
