@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id='dob' class='java.util.Date'>
+		<property name="year" value='93' />
+		<property name="month" value='0' />
+		<property name="date" value='03' />
+	</bean>
+
+	<bean id='doj' class='java.util.Date'>
+		<property name="year" value='114' />
+		<property name="month" value='11' />
+		<property name="date" value='22' />
+	</bean>
+
+	<bean id='dom' class='java.util.Date'>
+		<property name="year" value='117' />
+		<property name="month" value='3' />
+		<property name="date" value='05' />
+	</bean>
+
+	<!-- Configuring TARGET bean using Constructor injection -->
+	<bean id="per1" class='in.ineuron.bean.PersonInfo'>
+		<constructor-arg name='pno' value="7" />
+		<constructor-arg name='pname' value="dhoni" />
+		<constructor-arg name='dob' ref="dob" />
+		<constructor-arg name='doj' ref="doj" />
+		<constructor-arg name='dom' ref="dom" />
+	</bean>
+
+	<!-- Configuring TARGET bean using Constructor injection -->
+	<bean id="per2" class='in.ineuron.bean.PersonInfo'>
+		<constructor-arg value="45" />
+		<constructor-arg value="rohit" />
+		<constructor-arg name="dob">
+			<null />
+		</constructor-arg>
+		<constructor-arg name="doj">
+			<null />
+		</constructor-arg>
+		<constructor-arg name='dom' ref="dom" />
+	</bean>
+</beans>
