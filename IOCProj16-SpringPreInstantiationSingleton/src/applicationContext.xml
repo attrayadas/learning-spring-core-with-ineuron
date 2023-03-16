@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- CONFIGURING THE DEPENDANT BEAN -->
+	<bean id='bDart' class='in.ineuron.bean.BlueDart' />
+	<bean id='dtdc' class='in.ineuron.bean.DTDC' primary="true" />
+	<bean id='courier' class='in.ineuron.bean.FirstFlight'
+		autowire-candidate="false" lazy-init="true" />
+
+	<!-- CONFIGURING THE TARGET BEAN -->
+	<bean id='fpkt' class='in.ineuron.bean.Flipkart'
+		autowire="constructor">
+		<property name="regNo" value='12345' />
+	</bean>
+</beans>
