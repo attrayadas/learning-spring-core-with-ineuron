@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="in/ineuron/properties/application.properties"/>
+
+	<!-- DataSource Configuration -->
+	<bean id="mysqlDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value='${jdbc.driver}' />
+		<property name="url" value='${jdbc.url}' />
+		<property name="username" value='${jdbc.user}' />
+		<property name="password" value='${jdbc.password}' />
+	</bean>
+
+
+	<!-- DAO Configuration -->
+	<bean id='mysqlDaoImpl' class='in.ineuron.dao.CustomerMySQLDAOImp'>
+		<constructor-arg name='dataSource'
+			ref='mysqlDataSource' />
+	</bean>
+
+	<!-- Service Configuration -->
+	<bean id='serviceImpl'
+		class='in.ineuron.service.CustomerMgmtServiceImpl'>
+		<constructor-arg name='dao' ref='mysqlDaoImpl' />
+	</bean>
+
+	<!-- Controller Configuration -->
+	<bean id='controller'
+		class='in.ineuron.controller.CustomerController'>
+		<constructor-arg name='service' ref='serviceImpl' />
+	</bean>
+
+</beans>
+
+
