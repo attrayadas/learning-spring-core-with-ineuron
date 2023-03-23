@@ -17,3 +17,6 @@ public class ClientApp {
 
 	}
 }
+
+//Output:
+//	Robot [id=10000, name=null, lab=iNeuron, price=54335.0]
