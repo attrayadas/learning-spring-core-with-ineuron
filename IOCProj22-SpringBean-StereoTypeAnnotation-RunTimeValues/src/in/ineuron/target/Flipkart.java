@@ -20,7 +20,7 @@ public class Flipkart {
 
 	// Dependent Object
 	@Autowired
-	@Qualifier(value = "bDart")
+	@Qualifier(value = "newRef")
 	private Courier courier;
 
 	@Autowired

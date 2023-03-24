@@ -16,5 +16,7 @@
 	<bean id='dt' class='java.util.Date'>
 		<property name="date" value='${dt.day}' />
 	</bean>
+	
+	<alias name="fFlight" alias="newRef"/>
 
 </beans>
