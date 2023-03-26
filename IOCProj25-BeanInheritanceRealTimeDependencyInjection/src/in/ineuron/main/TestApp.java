@@ -2,8 +2,6 @@ package in.ineuron.main;
 
 import java.util.Scanner;
 
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import in.ineuron.controller.CustomerController;
